@@ -1,0 +1,47 @@
+@use '../config';
+
+.input{
+  display: flex;
+  min-width: 0;
+  height: 4rem;
+  border: none;
+  border-bottom: solid .2rem config.$color-bg-600;
+  margin: 0 1rem;
+
+  background-color: transparent;
+
+  &__content{
+    min-width: 0;
+
+    padding: 0 .5rem;
+    border: none;
+    border-radius: config.$layout-radius;
+    margin: .2rem 0;
+
+    flex-grow: 1;
+
+
+
+    &:hover{
+      background-color: config.$color-bg-100;
+    }
+
+    &:focus{
+      outline: .2rem solid config.$color-bg-700;
+    }
+
+    // Hack to hide arrows from number inputs
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
+    &[type = number] {
+      text-align: right;
+      -moz-appearance: textfield;
+    }
+  }
+
+
+}

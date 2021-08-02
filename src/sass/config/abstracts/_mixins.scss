@@ -1,0 +1,106 @@
+// Utility function to find match end of the string
+@function ends-with($string, $find) {
+  @if (str-index($string, $find) == (str-length($string) - str-length($find) + 1)) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+// clearfix
+@mixin clearfix {
+  &::after {
+    display : table;
+
+    clear   : both;
+
+    content : '';
+  }
+}
+
+// Media query
+@mixin respond($breakpoint) {
+  // Normal queries
+  @if ($breakpoint == xs) {
+    @media only screen and (max-width : 576px) {
+      @content;
+    }
+  } @else if ($breakpoint == sm) {
+    @media only screen and (max-width : 768px) {
+      @content;
+    }
+  } @else if ($breakpoint == md) {
+    @media only screen and (max-width : 992px) {
+      @content;
+    }
+  } @else if ($breakpoint == lg) {
+    @media only screen and (max-width : 1200px) {
+      @content;
+    }
+  } @else if ($breakpoint == xl) {
+    @media only screen and (min-width : 1200px) {
+      @content;
+    }
+  }
+
+    // Phone/touch device queries
+  @else if ($breakpoint == xs-touch) {
+    @media only screen and (max-width : 576px), only screen and (hover : none) {
+      @content;
+    }
+  } @else if ($breakpoint == sm-touch) {
+    @media only screen and (max-width : 768px), only screen and (hover : none) {
+      @content;
+    }
+  } @else if ($breakpoint == md-touch) {
+    @media only screen and (max-width : 992px), only screen and (hover : none) {
+      @content;
+    }
+  } @else if ($breakpoint == lg-touch) {
+    @media only screen and (max-width : 1200px), only screen and (hover : none) {
+      @content;
+    }
+  } @else if ($breakpoint == xl-touch) {
+    @media only screen and (min-width : 1200px), only screen and (hover : none) {
+      @content;
+    }
+  }
+
+    // Custom queries
+  @else if (ends-with($breakpoint, '-touch')) {
+    @media only screen and (max-width : $breakpoint), only screen and (hover : none) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width : $breakpoint), only screen and (hover : none) {
+      @content;
+    }
+  }
+}
+
+// Centers vertically, horizontally, or both using absolute positioning
+@mixin center($position) {
+  position : absolute;
+
+  @if $position == 'vertical' {
+    top       : 50%;
+    transform : translateY(-50%);
+  } @else if $position == 'horizontal' {
+    left      : 50%;
+    transform : translate(-50%);
+  } @else if $position == 'both' {
+    top       : 50%;
+    left      : 50%;
+    transform : translate(-50%, -50%);
+  }
+}
+
+// Centers block element
+@mixin blockCenter {
+  margin  : {
+    right : auto;
+    left  : auto;
+  }
+}
+
+

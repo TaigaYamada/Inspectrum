@@ -1,0 +1,15 @@
+// config .scss file to forward all configuration-related files
+
+// abstracts
+@forward 'abstracts/_functions';
+@forward 'abstracts/_mixins';
+@forward 'abstracts/_deviant-grid' as grid-*;
+@forward 'abstracts/_typography' as font-*;
+@forward 'abstracts/_layout' as layout-*;
+@forward 'abstracts/_color' as color-*;
+@forward 'abstracts/_shadow' as shadow-*;
+
+// _vendor
+@forward 'vendor/reset';
+
+

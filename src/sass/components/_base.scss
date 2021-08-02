@@ -1,0 +1,32 @@
+@use '../config';
+
+*,
+*::after,
+*::before {
+  box-sizing  : inherit;
+  padding     : 0;
+  margin      : 0;
+
+  line-height : inherit;
+
+}
+
+html {
+  // this defines what 1rem is (10px)
+  font-size : 62.5%;
+}
+
+body {
+  box-sizing  : border-box;
+
+  font-family: 'Noto Sans', sans-serif;
+
+  font-size   : config.$font-size-default;
+  line-height : 1.5;
+}
+
+#root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}

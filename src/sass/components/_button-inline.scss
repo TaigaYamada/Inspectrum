@@ -1,0 +1,38 @@
+@use '../config';
+
+.button-inline{
+  display: flex;
+  border: none;
+  align-items: center;
+
+  background-color: transparent;
+
+  font-weight: inherit;
+
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+
+  &:focus{
+    outline: .2rem solid config.$color-bg-700;
+    outline-offset: .2rem;
+  }
+  
+  &:focus:not(:focus-visible){
+    outline: none;
+  }
+
+  &:focus-visible{
+    outline: .2rem solid config.$color-bg-700;
+    outline-offset: .2rem;
+  }
+
+  &:hover{
+    color: config.$color-bg-700;
+  }
+
+  &__icon{
+    width: 2rem;
+    height: 2rem;
+    margin-left: .2rem;
+  }
+}

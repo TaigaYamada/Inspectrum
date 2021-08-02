@@ -1,0 +1,45 @@
+@use '../config';
+
+.button{
+  display: flex;
+  width: 4.5rem;
+  height: 4.5rem;
+  border : none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+
+  background-color: config.$color-bg-100;
+
+  color: config.$color-true-black;
+
+  &:hover{
+    background-color: config.$color-bg-200;
+  }
+
+  &:focus{
+    outline: .2rem solid config.$color-bg-700;
+  }
+  &:focus:not(:focus-visible){
+    outline: none;
+  }
+  &:focus-visible{
+    outline: .2rem solid config.$color-bg-700;
+  }
+
+  &:disabled{
+    background-color: transparent;
+
+    color: config.$color-bg-300;
+  }
+
+  &__icon{
+    height: 1.6rem;
+  }
+
+  &--corner{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}

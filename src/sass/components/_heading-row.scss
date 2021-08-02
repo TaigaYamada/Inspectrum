@@ -1,0 +1,54 @@
+@use '../config';
+
+.row {
+  &.row--heading{
+    display: flex;
+    position: relative;
+
+    height: 6rem;
+    margin-bottom: 1rem;
+    align-items: center;
+
+    background-color: transparent;
+
+    font-weight: 700;
+
+    transition: all .2s ease-in-out;
+    box-shadow: none;
+  }
+
+  &__group--heading {
+    display: flex;
+    height: 100%;
+
+    flex-flow: column;
+    justify-content: flex-end;
+
+  }
+
+  &__heading-line {
+    display: flex;
+    height: 3rem;
+    justify-content: space-around;
+  }
+  &__heading-cell {
+    display: flex;
+    min-width: 0;
+    margin: 0 1rem;
+    align-items: flex-end;
+
+    flex: 1 1 0;
+
+
+    & p {
+      width: 100%;
+
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &--direct{
+      margin: 0;
+    }
+  }
+}

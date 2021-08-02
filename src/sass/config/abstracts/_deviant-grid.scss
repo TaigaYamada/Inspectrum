@@ -1,0 +1,40 @@
+// DEVIANT GRID v2.3
+
+// Grid generator
+// Specify element type [row/col], and input the $setting map
+// DO NOT USE SHORTHAND PROPERTIES FOR MARGIN !!!
+// Do not use % based width/height value with x-gutter
+
+@mixin parent($setting) {
+  display         : flex;
+
+  flex-flow       : map_get($setting, direction) wrap;
+  justify-content : map_get($setting, primary-spread);
+  align-content   : map_get($setting, secondary-spread);
+  align-items     : map_get($setting, secondary-align);
+
+
+  @if (map_get($setting, direction) != row and map_get($setting, direction) != row-reverse) {
+    margin : (-(map_get($setting,primary-gutter) / 2) 0);
+  } @else {
+    margin : 0 (-(map_get($setting,primary-gutter) / 2));
+  }
+}
+
+@mixin child($setting) {
+  // col
+  @if (map_get($setting, direction) != row and map_get($setting, direction) != row-reverse) {
+    margin : ((map_get($setting,primary-gutter) / 2) 0);
+  } @else {
+    margin : 0 ((map_get($setting,primary-gutter) / 2));
+  }
+}
+
+// default settings for DEVIANT GRID
+$default-grid : (
+  primary-gutter: 3rem, // rem | px
+  primary-spread: space-between, // flex-start | flex-end | center | space-between | space-around | space-evenly
+  secondary-align: center, // stretch | flex-start | flex-end | center | baseline
+  secondary-spread: flex-start, // flex-start | flex-end | center | space-between | space-around | stretch
+  direction: row // row | row-reverse | column | column-reverse
+);

@@ -1,0 +1,163 @@
+@use '../config';
+.cell{
+  position: relative;
+
+  &__button{
+    position: relative;
+    width: 7rem;
+    height: 7rem;
+    border: none;
+
+    background-color: config.$color-true-white;
+
+    &--selected{
+      font-weight: 900;
+    }
+
+    // 3 sets of css for 3 qualities of contrast
+    &--pass.cell__button--valid{
+      background-color: config.$color-green-100;
+
+      &:hover{
+        background-color: config.$color-green-200;
+      }
+
+      &:focus{
+        border: .2rem solid config.$color-green-700 !important;
+      }
+
+      &.cell__button--selected{
+        background-color: config.$color-green-300;
+
+        font-weight: 900;
+      }
+    }
+
+    &--caution.cell__button--valid{
+      background-color: config.$color-yellow-100;
+
+      &:hover{
+        background-color: config.$color-yellow-200;
+      }
+
+      &:focus{
+        border: .2rem solid config.$color-yellow-700 !important;
+      }
+
+      &.cell__button--selected{
+        background-color: config.$color-yellow-300;
+
+        font-weight: 900;
+      }
+    }
+
+    &--fail.cell__button--valid{
+      background-color: config.$color-red-100;
+
+      &:hover{
+        background-color: config.$color-red-200;
+      }
+
+      &:focus{
+        border: .2rem solid config.$color-red-700 !important;
+      }
+
+      &.cell__button--selected{
+        background-color: config.$color-red-300;
+
+        font-weight: 900;
+      }
+    }
+
+    // Adding outer border for the table
+    &--top{
+      border-top: .2rem solid config.$color-bg-200;
+    }
+    &--bottom{
+      border-bottom: .2rem solid config.$color-bg-200;
+    }
+    &--left{
+      border-left: .2rem solid config.$color-bg-200;
+    }
+    &--right{
+      border-right: .2rem solid config.$color-bg-200;
+    }
+
+    // Rounding corner
+    &--top.cell__button--left{
+      border-top-left-radius: config.$layout-radius;
+    }
+
+    &--top.cell__button--right{
+      border-top-right-radius: config.$layout-radius;
+    }
+
+    &--bottom.cell__button--right{
+      border-bottom-right-radius: config.$layout-radius;
+    }
+
+    &--bottom.cell__button--left{
+      border-bottom-left-radius: config.$layout-radius;
+    }
+
+    // Currently editing color + mark
+    &--current-horizontal{
+      border-top: .2rem solid config.$color-bg-500;
+      border-bottom: .2rem solid config.$color-bg-500;
+
+      &.cell__button--left{
+        border-left: .2rem solid config.$color-bg-500;
+      }
+      &.cell__button--right{
+        border-right: .2rem solid config.$color-bg-500;
+      }
+
+    }
+    &--current-vertical{
+      border-right: .2rem solid config.$color-bg-500;
+      border-left: .2rem solid config.$color-bg-500;
+
+      &.cell__button--top{
+        border-top: .2rem solid config.$color-bg-500;
+      }
+      &.cell__button--bottom{
+        border-bottom: .2rem solid config.$color-bg-500;
+      }
+    }
+  }
+
+
+  &__content{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: config.$color-true-black;
+    pointer-events: none;
+    z-index: 10000;
+
+  }
+
+  &__icon{
+    height: 2.4rem;
+  }
+
+  &__circle{
+    width: 3rem;
+    height: 3rem;
+    border: solid .2rem config.$color-bg-900;
+    border-radius: 50%;
+
+    &--horizontal{
+      position: absolute;
+      transform: translate(2.5rem, -6rem);
+    }
+  }
+
+}

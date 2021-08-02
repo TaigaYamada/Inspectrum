@@ -1,0 +1,59 @@
+@use '../config';
+
+.row {
+  display: flex;
+  position: absolute;
+
+  height: 6rem;
+  border-radius: config.$layout-radius;
+  align-items: center;
+
+  background-color: config.$color-true-white;
+
+  transition: all .2s ease-in-out;
+  box-shadow: config.$shadow-low;
+
+  &--pending::before {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transform: translate(-3rem);
+
+    background-color: config.$color-bg-700;
+    content: '';
+  }
+
+
+  &__group{
+    display: flex;
+    margin: 0 1.5rem;
+
+    flex-shrink: 0;
+
+    &--button{
+      width: 4.5rem;
+      margin: 0 1rem;
+    }
+    &--number{
+      width: 3rem;
+
+      font-weight: 700;
+
+      & p{
+        width: 100%;
+
+        text-align: right;
+      }
+    }
+
+    &--wide{
+      width: 10rem;
+    }
+
+    &--triple {
+      width: 21rem;
+    }
+  }
+
+}

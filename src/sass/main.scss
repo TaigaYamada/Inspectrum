@@ -1,0 +1,15 @@
+// This file imports all files inside of components sub-folder
+// Maybe this should be automated in the future
+
+// My own components
+@use 'components/base';
+@use 'components/config-bar';
+@use 'components/container';
+@use 'components/heading-row';
+@use 'components/row';
+@use 'components/input';
+@use 'components/cell';
+@use 'components/button';
+@use 'components/button-inline';
+@use 'components/preview';
+@use 'components/modal';
