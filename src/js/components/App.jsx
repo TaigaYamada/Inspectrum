@@ -23,7 +23,7 @@ const App = (props) => {
     toggleWcagMode
   } = props;
 
-  // Sorting the color list to render the RowColor in order
+  // Assigning the sortedColorList for the first time
   const sortedColorList = Object.keys(colors).sort(
     (first, second) => (colors[second].index - colors[first].index)
   );
@@ -35,6 +35,11 @@ const App = (props) => {
 
     // setting the height
     document.getElementById('container').style.height = `${7 * (sortedColorList.length + 1) + 20}rem`;
+
+    // Sorting the sortedColorList again
+    sortedColorList.sort(
+      (first, second) => (colors[second].index - colors[first].index)
+    );
   });
 
   return (
