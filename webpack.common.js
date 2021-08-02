@@ -1,20 +1,22 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+
+const path = require('path');
 // ===== End of imports ===== //
 
 module.exports = {
-  entry: './src/js/index.jsx',
-  plugins: [
+  entry   : './src/js/index.jsx',
+  plugins : [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin(
       {
-        template: "./src/index.html"
+        template : './src/index.html'
       }
     ),
     new ImageMinimizerPlugin({
-      minimizerOptions: {
-        plugins: [
+      minimizerOptions : {
+        plugins : [
           ['mozjpeg', {
             progressive : true,
             quality     : 75
@@ -34,21 +36,21 @@ module.exports = {
       }
     })
   ],
-  module:{
-    rules: [
+  module : {
+    rules : [
       {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
+        test    : /\.jsx?$/,
+        exclude : /node_modules/,
+        use     : {
+          loader : 'babel-loader'
         }
       },
       {
-        test: /\.(s[ac]ss|css)$/,
-        use: [
+        test : /\.(s[ac]ss|css)$/,
+        use  : [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {publicPath: ''}
+            loader  : MiniCssExtractPlugin.loader,
+            options : { publicPath : '' }
           },
           'css-loader',
           'postcss-loader',
@@ -56,17 +58,18 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
-        type: "asset"
+        test : /\.(png|jpe?g|gif|svg)$/,
+        type : 'asset'
       }
     ]
   },
-  resolve: {
-    extensions: ['.js', '.jsx']
+  resolve : {
+    extensions : ['.js', '.jsx']
   },
-  output: {
-    assetModuleFilename: 'img/[hash][ext][query]',
-    clean: true
+  output : {
+    path                : path.resolve(__dirname, 'docs'),
+    assetModuleFilename : 'img/[hash][ext][query]',
+    clean               : true
   }
 
-}
+};
