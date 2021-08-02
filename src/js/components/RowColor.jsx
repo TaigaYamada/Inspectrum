@@ -65,7 +65,10 @@ const RowColor = (props) => {
           // Disable the delete button if there is only 1 color
           disabled={sortedColorList.length === 1}
         >
-          <Dismiss16Filled className='button__icon' alt={texts[displayLanguage].deleteColor}/>
+          <Dismiss16Filled
+            className='button__icon'
+            alt={texts[displayLanguage].deleteColor}
+          />
         </Button>
       </div>
 

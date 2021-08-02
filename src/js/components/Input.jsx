@@ -28,6 +28,9 @@ const Input = (props) => {
       if (parseFloat(inputRef.current.value) !== parseFloat(displayValue)) {
         inputRef.current.value = displayValue;
       }
+      // Even if type is not a number (thus live format is off), value still needs to be live-updated when other inputs are edited
+    } else if (document.activeElement !== inputRef.current) {
+      inputRef.current.value = displayValue;
     }
   });
 
