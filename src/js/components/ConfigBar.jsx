@@ -12,7 +12,8 @@ const ConfigBar = (props) => {
     displayLanguage,
     updateDisplayLanguage,
     changeModalState,
-    toggleWcagMode
+    toggleWcagMode,
+    togglePreview
   } = props;
 
   return (
@@ -36,6 +37,14 @@ const ConfigBar = (props) => {
             id='text-size'
           />
           <label htmlFor='text-size'>{texts[displayLanguage].textSizeToggle}</label>
+        </div>
+        <div className='config-bar__toggle'>
+          <input
+            type='checkbox'
+            onChange={togglePreview}
+            id='preview'
+          />
+          <label htmlFor='preview'>{texts[displayLanguage].previewToggle}</label>
         </div>
         <select
           className='config-bar__select'

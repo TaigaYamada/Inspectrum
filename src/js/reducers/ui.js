@@ -47,6 +47,13 @@ const uiReducer = (state = {}, action) => {
       isWcagLarge : !state.isWcagLarge
     };
 
+  // ===== Action to toggle display of preview pane ===== //
+  case 'TOGGLE_PREVIEW':
+    return {
+      ...state,
+      isPreviewOn : !state.isPreviewOn
+    };
+
   // If no match, don't do anything
   default:
     return state;

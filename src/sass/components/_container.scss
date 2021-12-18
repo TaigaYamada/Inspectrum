@@ -6,6 +6,10 @@
     padding-top: 7rem;
     padding-bottom: 25rem;
 
+  &--full{
+    padding-bottom: 0;
+  }
+
   &__outer{
     position: relative;
     width: 100%;

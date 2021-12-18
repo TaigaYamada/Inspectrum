@@ -50,6 +50,11 @@ export const changeModalState = (modalState) => ({
 });
 
 // Toggle whether WCAG contrast is checked for large/small text
-export const toggleWcagMode = (modalState) => ({
+export const toggleWcagMode = () => ({
   type : 'TOGGLE_WCAG_MODE'
+});
+
+// Toggle display of the preview
+export const togglePreview = () => ({
+  type : 'TOGGLE_PREVIEW'
 });

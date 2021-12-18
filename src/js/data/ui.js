@@ -6,7 +6,8 @@ const ui = {
   currentColor    : null,
   displayLanguage : 'en',
   modalState      : 'hidden',
-  isWcagLarge : false
+  isWcagLarge : false,
+  isPreviewOn : false
 };
 
 export default ui;

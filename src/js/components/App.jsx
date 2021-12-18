@@ -20,7 +20,8 @@ const App = (props) => {
     addColor,
     updateDisplayLanguage,
     changeModalState,
-    toggleWcagMode
+    toggleWcagMode,
+    togglePreview
   } = props;
 
   // Assigning the sortedColorList for the first time
@@ -54,9 +55,10 @@ const App = (props) => {
         updateDisplayLanguage={updateDisplayLanguage}
         changeModalState={changeModalState}
         toggleWcagMode={toggleWcagMode}
+        togglePreview={togglePreview}
       />
       {/* This is to somewhat center the rows */}
-      <div className='container'>
+      <div className={`container ${ui.isPreviewOn ? '' : 'container--full'}`}>
         <div className='container__outer'>
           <ul
             id='container'
@@ -92,12 +94,14 @@ const App = (props) => {
       </div>
 
       {/* Color combination preview */}
-
-      <Preview
-        colors={colors}
-        previewSelection={ui.previewSelection}
-        displayLanguage={ui.displayLanguage}
-      />
+      {
+        (ui.isPreviewOn ? <Preview
+          colors={colors}
+          previewSelection={ui.previewSelection}
+          displayLanguage={ui.displayLanguage}
+          /> : '')
+      }
+      
     </>
   );
 };
