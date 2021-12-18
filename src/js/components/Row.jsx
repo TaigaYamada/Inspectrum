@@ -13,7 +13,7 @@ const Row = (props) => {
   return (
     <li
       className={`row${(isPending ? ' row--pending' : '')}`}
-      style={{ transform : `translate(0, ${i * 7}rem)` }}
+      style={{ transform : `translate(0, ${i * 5}rem)` }}
     >
       {children}
     </li>

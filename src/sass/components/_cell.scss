@@ -1,11 +1,12 @@
 @use '../config';
 .cell{
   position: relative;
+  font-size: 1.4rem;
 
   &__button{
     position: relative;
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
     border: none;
 
     background-color: config.$color-true-white;
@@ -145,7 +146,7 @@
   }
 
   &__icon{
-    height: 2.4rem;
+    height: 2rem;
   }
 
   &__circle{
@@ -156,7 +157,7 @@
 
     &--horizontal{
       position: absolute;
-      transform: translate(2.5rem, -6rem);
+      transform: translate(1rem, -4rem);
     }
   }
 

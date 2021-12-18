@@ -1,10 +1,11 @@
 @use '../config';
 
 .row {
+  font-size: 1.6rem;
   display: flex;
   position: absolute;
 
-  height: 6rem;
+  height: 4rem;
   border-radius: config.$layout-radius;
   align-items: center;
 
@@ -27,16 +28,16 @@
 
   &__group{
     display: flex;
-    margin: 0 1.5rem;
+    margin: 0 1rem;
 
     flex-shrink: 0;
 
     &--button{
-      width: 4.5rem;
-      margin: 0 1rem;
+      width: 3rem;
+      margin: 0 .5rem;
     }
     &--number{
-      width: 3rem;
+      width: 2rem;
 
       font-weight: 700;
 
@@ -48,11 +49,11 @@
     }
 
     &--wide{
-      width: 10rem;
+      width: 9.5rem;
     }
 
     &--triple {
-      width: 21rem;
+      width: 18rem;
     }
   }
 
